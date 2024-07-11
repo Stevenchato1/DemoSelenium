@@ -46,6 +46,18 @@ public class PracticeLocator extends BaseTest {
         }
     }
 
+    @Test
+    public void practeLinkTest(){
+        driver.get("https://the-internet.herokuapp.com/");
+        driver.findElement(By.xpath("//a[text()='Redirect Link']")).click();
+        //WebElement partialLink = driver.findElement(By.partialLinkText("Selenium"));
+        //partialLink.click();
+        WebElement Link = driver.findElement(By.linkText("here"));
+        Link.click();
+        WebElement status = driver.findElement(By.partialLinkText("2"));
+        status.click();
+    }
+
 
 
     /*li[@id='macrocategoria_1_desktop']/ul/li
