@@ -1,5 +1,6 @@
 package com.pom.utils;
 
+import com.pom.pages.RegisterPage;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +18,7 @@ public class BaseTest {
     protected WebDriver driver;
     protected final String URL = "https://magento.softwaretestingboard.com/";
     protected int TIME_OUT = 10;
+    protected RegisterPage registerPage;
 
     @BeforeMethod
     public void setUp(){
@@ -24,6 +26,8 @@ public class BaseTest {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIME_OUT));
         driver.get(URL);
+        registerPage = new RegisterPage(driver);
+
     }
 
     @AfterMethod
